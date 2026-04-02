@@ -17,29 +17,29 @@ const categories = [
   { key: "apparel", label: "APPAREL" },
 ];
 
+const SUPPLEMENT_TYPES = ["food supplements"];
+const SUPPLEMENT_KEYWORDS = ["gummy", "gummies", "pre-workout", "supplement", "protein", "creatine"];
+
+const APPAREL_TYPES = ["hats", "tank top", "t-shirt", "hoodie", "long-sleeve", "all over prints", "kids clothes"];
+const APPAREL_KEYWORDS = ["shirt", "hoodie", "tank", "hat", "cap", "apparel", "tee", "pullover", "baby"];
+
 function filterProducts(products: ShopifyProduct[], category: string): ShopifyProduct[] {
   if (category === "all") return products;
 
   return products.filter((product) => {
     const title = product.title.toLowerCase();
+    const productType = (product.productType || "").toLowerCase();
+
     if (category === "supplements") {
       return (
-        title.includes("gummy") ||
-        title.includes("gummies") ||
-        title.includes("pre-workout") ||
-        title.includes("supplement") ||
-        title.includes("protein") ||
-        title.includes("creatine")
+        SUPPLEMENT_TYPES.includes(productType) ||
+        SUPPLEMENT_KEYWORDS.some((k) => title.includes(k))
       );
     }
     if (category === "apparel") {
       return (
-        title.includes("shirt") ||
-        title.includes("hoodie") ||
-        title.includes("tank") ||
-        title.includes("hat") ||
-        title.includes("apparel") ||
-        title.includes("tee")
+        APPAREL_TYPES.includes(productType) ||
+        APPAREL_KEYWORDS.some((k) => title.includes(k))
       );
     }
     return true;

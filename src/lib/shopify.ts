@@ -44,6 +44,7 @@ export async function getProducts(): Promise<ShopifyProduct[]> {
           handle
           description
           descriptionHtml
+          productType
           priceRange {
             minVariantPrice {
               amount
@@ -81,13 +82,14 @@ export async function getProducts(): Promise<ShopifyProduct[]> {
 }
 
 export async function getProductByHandle(handle: string): Promise<ShopifyProduct | null> {
-  const query = `{
-    productByHandle(handle: "${handle}") {
+  const query = `query GetProduct($handle: String!) {
+    productByHandle(handle: $handle) {
       id
       title
       handle
       description
       descriptionHtml
+      productType
       priceRange {
         minVariantPrice {
           amount
@@ -118,7 +120,7 @@ export async function getProductByHandle(handle: string): Promise<ShopifyProduct
     }
   }`;
 
-  const data = await shopifyFetch<ProductByHandleResponse>(query);
+  const data = await shopifyFetch<ProductByHandleResponse>(query, { handle });
   return data.productByHandle;
 }
 
