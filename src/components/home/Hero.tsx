@@ -132,7 +132,7 @@ export function Hero() {
                 width={420}
                 height={480}
                 priority
-                className="max-h-[65vh] w-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-500"
+                className="max-h-[65vh] w-auto object-contain drop-shadow-[0_20px_60px_rgba(255,20,147,0.4)] hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
 

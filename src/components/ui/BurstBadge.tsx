@@ -27,11 +27,17 @@ export function BurstBadge({ children, className = "", delay = 0, size = "md" }:
         damping: 15,
         delay,
       }}
-      whileHover={{ scale: 1.1, rotate: 5 }}
+      whileHover={{
+        scale: 1.25,
+        rotate: [0, -8, 8, -4, 0],
+        transition: { duration: 0.4, type: "spring", stiffness: 500 },
+      }}
+      whileTap={{ scale: 0.9 }}
       className={`
-        clip-burst bg-brand-pink
+        clip-burst bg-brand-pink cursor-pointer
         flex items-center justify-center text-center
         font-display text-white uppercase leading-tight
+        drop-shadow-[3px_3px_0_rgba(26,26,26,0.8)]
         p-4 ${sizes[size]} ${className}
       `}
     >
