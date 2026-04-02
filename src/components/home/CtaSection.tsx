@@ -57,7 +57,7 @@ export function CtaSection() {
             <motion.div
               animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-0 rounded-pill bg-brand-yellow/30 -m-2"
+              className="absolute inset-0 rounded-pill bg-brand-yellow/30 -m-2 pointer-events-none"
             />
             <Button href="/#shop" variant="secondary" size="lg">
               SHOP GYMSNACKS →
