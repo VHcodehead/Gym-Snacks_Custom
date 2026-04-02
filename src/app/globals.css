@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* === GYMSNACKS DESIGN TOKENS === */
+@theme inline {
+  /* Brand Colors - From Packaging */
+  --color-brand-yellow: #FFD700;
+  --color-brand-yellow-light: #FFF176;
+  --color-brand-yellow-dark: #F5C400;
+  --color-brand-yellow-cream: #FFF8DC;
+
+  --color-brand-pink: #FF1493;
+  --color-brand-pink-light: #FF69B4;
+  --color-brand-pink-dark: #C70067;
+
+  --color-brand-black: #1A1A1A;
+  --color-brand-black-soft: #2D2D2D;
+
+  /* Semantic Colors */
+  --color-background: #FFF8DC;
+  --color-foreground: #1A1A1A;
+  --color-surface: #FFFFFF;
+  --color-muted: #4A4A4A;
+  --color-subtle: #888888;
+
+  /* Mascot Accent Colors */
+  --color-mascot-red: #FF6B6B;
+  --color-mascot-green: #A8E05F;
+  --color-mascot-orange: #FFA872;
+  --color-mascot-purple: #B57EFC;
+
+  /* Fonts */
+  --font-display: var(--font-bungee);
+  --font-body: var(--font-inter);
+
+  /* Comic Design Tokens */
+  --shadow-comic: 4px 4px 0 #1A1A1A;
+  --shadow-comic-lg: 8px 8px 0 #1A1A1A;
+  --shadow-comic-xl: 12px 12px 0 #1A1A1A;
+  --shadow-comic-hover: 6px 6px 0 #1A1A1A;
+  --shadow-pink-glow: 0 0 20px rgba(255, 20, 147, 0.3);
+
+  --radius-comic: 16px;
+  --radius-comic-lg: 24px;
+  --radius-comic-xl: 32px;
+  --radius-pill: 50px;
+
+  /* Animations */
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* === BASE STYLES === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* === COMIC UTILITY CLASSES === */
+.comic-border {
+  border: 3px solid var(--color-brand-black);
+}
+
+.comic-border-thick {
+  border: 5px solid var(--color-brand-black);
+}
+
+.comic-shadow {
+  box-shadow: var(--shadow-comic);
+}
+
+.comic-shadow-lg {
+  box-shadow: var(--shadow-comic-lg);
+}
+
+.comic-shadow-xl {
+  box-shadow: var(--shadow-comic-xl);
+}
+
+.comic-shadow-hover {
+  transition: all 0.2s var(--ease-bounce);
+}
+
+.comic-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-comic-hover);
+}
+
+/* Text with pink drop shadow (packaging style) */
+.text-shadow-pink {
+  text-shadow: 4px 4px 0 var(--color-brand-pink);
+}
+
+.text-shadow-black {
+  text-shadow:
+    3px 3px 0 var(--color-brand-black),
+    -1px -1px 0 var(--color-brand-black),
+    1px -1px 0 var(--color-brand-black),
+    -1px 1px 0 var(--color-brand-black);
+}
+
+/* Gradient text */
+.gradient-text-pink {
+  background: linear-gradient(135deg, var(--color-brand-pink), var(--color-brand-pink-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pattern background overlay */
+.pattern-overlay {
+  position: relative;
+}
+
+.pattern-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 5l3 8-3 8-3-8z' fill='%231A1A1A' opacity='.06'/%3E%3Cpath d='M45 15l2 5-2 5-2-5z' fill='%231A1A1A' opacity='.06'/%3E%3Ccircle cx='30' cy='45' r='1.5' fill='%231A1A1A' opacity='.06'/%3E%3Cpath d='M5 35l4-2 4 2-4 2z' fill='%231A1A1A' opacity='.06'/%3E%3Cpath d='M50 40l1-6h2l1 6-1 6h-2z' fill='%231A1A1A' opacity='.04'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Starburst clip path for badges */
+.clip-burst {
+  clip-path: polygon(50% 0%, 61% 11%, 75% 3%, 78% 18%, 93% 18%, 88% 33%, 100% 40%, 90% 50%, 100% 60%, 88% 67%, 93% 82%, 78% 82%, 75% 97%, 61% 89%, 50% 100%, 39% 89%, 25% 97%, 22% 82%, 7% 82%, 12% 67%, 0% 60%, 10% 50%, 0% 40%, 12% 33%, 7% 18%, 22% 18%, 25% 3%, 39% 11%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-brand-pink);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-yellow-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-pink);
+  border-radius: 5px;
+  border: 2px solid var(--color-brand-yellow-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-pink-dark);
+}
