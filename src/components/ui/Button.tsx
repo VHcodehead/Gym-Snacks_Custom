@@ -49,14 +49,18 @@ export function Button({
   `;
 
   if (href) {
+    // Use native <a> for hash links (cross-page scroll) and external URLs
+    const isHashOrExternal = href.includes("#") || href.startsWith("http");
+    const LinkComponent = isHashOrExternal ? "a" : Link;
+
     return (
       <motion.div
         whileHover={disabled ? {} : { scale: 1.05, y: -3 }}
         whileTap={disabled ? {} : { scale: 0.97 }}
       >
-        <Link href={href} className={baseClasses}>
+        <LinkComponent href={href} className={baseClasses}>
           {children}
-        </Link>
+        </LinkComponent>
       </motion.div>
     );
   }
