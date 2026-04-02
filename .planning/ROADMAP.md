@@ -10,6 +10,7 @@
 **Goal:** Verify the complete purchase flow works end-to-end — from browsing products to completing checkout on Shopify.
 
 **Requirements:** SHOP-01 through SHOP-10
+**Plans:** 3 plans
 
 **Success Criteria:**
 1. Products load from Shopify API and display correctly in grid and detail pages
@@ -18,10 +19,10 @@
 4. Clicking "Checkout" creates a Shopify checkout with correct line items and redirects to Shopify payment page
 5. Complete a test purchase through Shopify checkout (use test mode if available)
 
-**Plans:**
-- Plan 1A: Test product loading and display (homepage grid, featured product, product detail)
-- Plan 1B: Test cart operations (add, update qty, remove, persistence)
-- Plan 1C: Test checkout flow (create checkout mutation → redirect → verify on Shopify)
+Plans:
+- [ ] 01-01-PLAN.md — Verify product loading and display (API, grid, detail pages, category filtering)
+- [ ] 01-02-PLAN.md — Verify cart operations (add, update qty, remove, localStorage persistence)
+- [ ] 01-03-PLAN.md — Fix checkout security and verify checkout flow (cart checkout + buy now)
 
 ---
 
