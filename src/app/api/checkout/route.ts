@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import type { CheckoutCreateResponse } from "@/lib/types";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN!;
 const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
@@ -49,24 +48,25 @@ export async function POST(request: Request) {
     }
   }
 
-  // Build mutation server-side (never trust client-provided GraphQL)
-  const lineItemsGql = lineItems
+  // Build Cart API mutation server-side using cartCreate (checkoutCreate was deprecated)
+  const linesGql = lineItems
     .map(
       (item) =>
-        `{ variantId: "${item.variantId}", quantity: ${item.quantity} }`
+        `{ merchandiseId: "${item.variantId}", quantity: ${item.quantity} }`
     )
     .join(", ");
 
   const mutation = `
     mutation {
-      checkoutCreate(input: {
-        lineItems: [${lineItemsGql}]
+      cartCreate(input: {
+        lines: [${linesGql}]
       }) {
-        checkout {
+        cart {
           id
-          webUrl
+          checkoutUrl
         }
-        checkoutUserErrors {
+        userErrors {
+          field
           message
         }
       }
@@ -94,17 +94,35 @@ export async function POST(request: Request) {
     }
 
     const json = await response.json();
-    const data = json.data as CheckoutCreateResponse;
 
-    if (data.checkoutCreate.checkoutUserErrors.length > 0) {
+    // Handle GraphQL-level errors
+    if (json.errors) {
+      console.error("Shopify GraphQL errors:", JSON.stringify(json.errors));
       return NextResponse.json(
-        { errors: data.checkoutCreate.checkoutUserErrors },
+        { errors: json.errors.map((e: { message: string }) => ({ message: e.message })) },
+        { status: 400 }
+      );
+    }
+
+    if (!json.data?.cartCreate) {
+      console.error("Unexpected Shopify response:", JSON.stringify(json));
+      return NextResponse.json(
+        { errors: [{ message: "Unexpected response from Shopify" }] },
+        { status: 502 }
+      );
+    }
+
+    const { cart, userErrors } = json.data.cartCreate;
+
+    if (userErrors && userErrors.length > 0) {
+      return NextResponse.json(
+        { errors: userErrors },
         { status: 400 }
       );
     }
 
     return NextResponse.json({
-      checkoutUrl: data.checkoutCreate.checkout?.webUrl,
+      checkoutUrl: cart?.checkoutUrl,
     });
   } catch (error) {
     console.error("Checkout error:", error);
