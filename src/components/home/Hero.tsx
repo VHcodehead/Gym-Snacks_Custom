@@ -112,24 +112,27 @@ export function Hero() {
             className="relative flex justify-center"
           >
             <motion.div
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              animate={{
+                y: [-15, 15, -15],
+                rotate: [-2, 2, -2],
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
               {/* Radial spotlight behind product */}
-              <div className="absolute inset-0 -z-10 scale-125 bg-[radial-gradient(circle,rgba(255,20,147,0.35)_0%,rgba(255,20,147,0.10)_40%,transparent_70%)] blur-xl" />
+              <div className="absolute inset-0 -z-10 scale-150 bg-[radial-gradient(circle,rgba(255,20,147,0.4)_0%,rgba(255,20,147,0.12)_40%,transparent_65%)] blur-2xl" />
 
               {/* Outer glow ring for drama */}
-              <div className="absolute inset-0 -z-20 scale-150 rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.12)_0%,transparent_60%)]" />
+              <div className="absolute inset-0 -z-20 scale-[2] rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.1)_0%,transparent_50%)]" />
 
-              {/* Product bag mockup - no frame needed, the bag has its own shape */}
+              {/* Transparent bag floating freely */}
               <Image
-                src="/assets/bag-mockup.png"
-                alt="GymSnacks Pre-Workout Gummies Variety Pack - Stand Up Pouch"
-                width={450}
-                height={600}
+                src="/assets/bag-float.png"
+                alt="GymSnacks Pre-Workout Gummies Variety Pack"
+                width={420}
+                height={480}
                 priority
-                className="max-h-[65vh] w-auto object-contain drop-shadow-[0_20px_40px_rgba(255,20,147,0.3)]"
+                className="max-h-[65vh] w-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
 
