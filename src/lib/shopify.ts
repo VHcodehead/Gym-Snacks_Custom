@@ -138,39 +138,3 @@ export async function getFeaturedProduct(): Promise<ShopifyProduct | null> {
   return featured || products[0] || null;
 }
 
-// Client-side only - called from Zustand store
-export async function createCheckout(
-  lineItems: Array<{ variantId: string; quantity: number }>
-): Promise<string> {
-  const mutation = `
-    mutation {
-      checkoutCreate(input: {
-        lineItems: [${lineItems
-          .map((item) => `{ variantId: "${item.variantId}", quantity: ${item.quantity} }`)
-          .join(", ")}]
-      }) {
-        checkout {
-          id
-          webUrl
-        }
-        checkoutUserErrors {
-          message
-        }
-      }
-    }
-  `;
-
-  // This runs client-side, so we need to fetch through an API route
-  const response = await fetch("/api/checkout", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ mutation }),
-  });
-
-  const data = await response.json();
-  if (data.errors?.length) {
-    throw new Error(data.errors[0].message);
-  }
-
-  return data.checkoutUrl;
-}

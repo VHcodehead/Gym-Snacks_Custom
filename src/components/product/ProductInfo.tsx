@@ -40,9 +40,9 @@ export function ProductInfo({ product }: ProductInfoProps) {
     setTimeout(() => setAdded(false), 2000);
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow = async () => {
     handleAddToCart();
-    setTimeout(() => checkout(), 500);
+    await checkout();
   };
 
   return (

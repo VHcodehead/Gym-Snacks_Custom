@@ -65,28 +65,10 @@ export const useCartStore = create<CartStore>()(
           quantity: item.quantity,
         }));
 
-        const mutation = `
-          mutation {
-            checkoutCreate(input: {
-              lineItems: [${lineItems
-                .map((item) => `{ variantId: "${item.variantId}", quantity: ${item.quantity} }`)
-                .join(", ")}]
-            }) {
-              checkout {
-                id
-                webUrl
-              }
-              checkoutUserErrors {
-                message
-              }
-            }
-          }
-        `;
-
         const response = await fetch("/api/checkout", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ mutation }),
+          body: JSON.stringify({ lineItems }),
         });
 
         const data = await response.json();
