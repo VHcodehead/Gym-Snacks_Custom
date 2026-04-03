@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     type: "website",
   },
   metadataBase: new URL("https://gymsnackinc.com"),
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
