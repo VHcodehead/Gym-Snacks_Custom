@@ -136,11 +136,46 @@ export function Hero() {
               />
             </motion.div>
 
+            {/* Coming Soon callouts */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30">
+              {["NEW FORMULA", "NEW BAG", "BETTER TASTE"].map((text, i) => (
+                <motion.span
+                  key={text}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30, scale: 0.5 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{
+                    delay: 1.4 + i * 0.2,
+                    type: "spring",
+                    stiffness: 500,
+                    damping: 15,
+                  }}
+                  whileHover={{ scale: 1.2, rotate: i % 2 === 0 ? -5 : 5 }}
+                  className="px-4 py-1.5 bg-brand-yellow text-brand-black font-display text-sm md:text-base rounded-pill border-[3px] border-brand-black shadow-comic cursor-default whitespace-nowrap"
+                >
+                  {text}
+                </motion.span>
+              ))}
+              <motion.span
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: 1,
+                  scale: [1, 1.08, 1],
+                }}
+                transition={{
+                  delay: 2.0,
+                  scale: { delay: 2.2, duration: 1.5, repeat: Infinity },
+                }}
+                className="px-5 py-2 bg-brand-pink text-white font-display text-base md:text-lg rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-default whitespace-nowrap"
+              >
+                COMING SOON!
+              </motion.span>
+            </div>
+
             {/* Extra mascot near product */}
             <MascotFloat
               index={4}
               size={70}
-              className="absolute -bottom-4 -right-4 z-20"
+              className="absolute -top-8 -right-4 z-20"
               shadow="light"
             />
           </motion.div>
