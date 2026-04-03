@@ -28,8 +28,8 @@ export function Navbar() {
       {/* Announcement Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-brand-pink border-b-[2px] border-brand-black overflow-hidden h-8 flex items-center">
         <motion.div
-          animate={{ x: ["100%", "-100%"] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="flex gap-12 whitespace-nowrap"
         >
           {Array.from({ length: 4 }).map((_, i) => (
