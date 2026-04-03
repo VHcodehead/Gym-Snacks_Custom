@@ -37,7 +37,7 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="relative z-10" onClick={closeMenu}>
               <Image
-                src="/assets/logo_header_3.png"
+                src="/assets/logo-full.png"
                 alt="GymSnacks"
                 width={160}
                 height={50}
