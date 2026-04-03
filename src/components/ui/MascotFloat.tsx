@@ -15,12 +15,17 @@ interface MascotFloatProps {
   index: number;
   className?: string;
   size?: number;
+  shadow?: "dark" | "light";
 }
 
-export function MascotFloat({ index, className = "", size = 100 }: MascotFloatProps) {
+export function MascotFloat({ index, className = "", size = 100, shadow = "dark" }: MascotFloatProps) {
   const mascot = mascots[index % mascots.length];
   const duration = 4 + (index % 3) * 2;
   const delay = index * 0.5;
+
+  const shadowClass = shadow === "light"
+    ? "drop-shadow-[3px_3px_6px_rgba(255,255,255,0.3)]"
+    : "drop-shadow-[4px_4px_0_rgba(26,26,26,0.2)]";
 
   return (
     <motion.div
@@ -46,7 +51,7 @@ export function MascotFloat({ index, className = "", size = 100 }: MascotFloatPr
           alt={mascot.alt}
           width={size}
           height={size}
-          className="drop-shadow-[4px_4px_0_rgba(26,26,26,0.2)]"
+          className={shadowClass}
         />
       </motion.div>
     </motion.div>

@@ -18,9 +18,9 @@ export function Hero() {
 
       {/* Mascots */}
       <div className="hidden lg:block">
-        <MascotFloat index={0} size={90} className="absolute top-20 left-[5%] z-20" />
-        <MascotFloat index={1} size={70} className="absolute bottom-32 left-[8%] z-20" />
-        <MascotFloat index={3} size={80} className="absolute top-32 right-[3%] z-20" />
+        <MascotFloat index={0} size={90} className="absolute top-20 left-[5%] z-20" shadow="light" />
+        <MascotFloat index={1} size={70} className="absolute bottom-32 left-[8%] z-20" shadow="light" />
+        <MascotFloat index={3} size={80} className="absolute top-32 right-[3%] z-20" shadow="light" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
@@ -141,6 +141,7 @@ export function Hero() {
               index={4}
               size={70}
               className="absolute -bottom-4 -right-4 z-20"
+              shadow="light"
             />
           </motion.div>
         </div>
