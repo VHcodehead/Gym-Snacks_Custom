@@ -138,7 +138,7 @@ export function Hero() {
 
             {/* Coming Soon callouts */}
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30">
-              {["NEW FORMULA", "NEW BAG", "BETTER TASTE"].map((text, i) => (
+              {["NEW FORMULA", "NEW LOOK", "BETTER TASTE"].map((text, i) => (
                 <motion.span
                   key={text}
                   initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30, scale: 0.5 }}
@@ -167,7 +167,7 @@ export function Hero() {
                 }}
                 className="px-5 py-2 bg-brand-pink text-white font-display text-base md:text-lg rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-default whitespace-nowrap"
               >
-                COMING SOON!
+                DROPPING SOON 🔥
               </motion.span>
             </div>
 
