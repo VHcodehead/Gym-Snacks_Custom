@@ -49,19 +49,32 @@ export function Button({
   `;
 
   if (href) {
-    // Use native <a> for hash links (cross-page scroll) and external URLs
+    // Use native <a> for hash links and external URLs
     const isHashOrExternal = href.includes("#") || href.startsWith("http");
-    const LinkComponent = isHashOrExternal ? "a" : Link;
+
+    if (isHashOrExternal) {
+      return (
+        <motion.a
+          href={href}
+          whileHover={disabled ? {} : { scale: 1.05, y: -3 }}
+          whileTap={disabled ? {} : { scale: 0.97 }}
+          className={baseClasses}
+        >
+          {children}
+        </motion.a>
+      );
+    }
 
     return (
-      <motion.div
-        whileHover={disabled ? {} : { scale: 1.05, y: -3 }}
-        whileTap={disabled ? {} : { scale: 0.97 }}
-      >
-        <LinkComponent href={href} className={baseClasses}>
+      <Link href={href} className={baseClasses}>
+        <motion.span
+          whileHover={disabled ? {} : { scale: 1.05, y: -3 }}
+          whileTap={disabled ? {} : { scale: 0.97 }}
+          className="inline-flex items-center justify-center gap-2"
+        >
           {children}
-        </LinkComponent>
-      </motion.div>
+        </motion.span>
+      </Link>
     );
   }
 
