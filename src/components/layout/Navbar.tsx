@@ -25,8 +25,28 @@ export function Navbar() {
 
   return (
     <>
+      {/* Announcement Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-brand-pink border-b-[2px] border-brand-black overflow-hidden h-8 flex items-center">
+        <motion.div
+          animate={{ x: ["100%", "-100%"] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+          className="flex gap-12 whitespace-nowrap"
+        >
+          {Array.from({ length: 4 }).map((_, i) => (
+            <span key={i} className="font-display text-sm text-white tracking-wide flex items-center gap-3">
+              <span>⚡ FREE SHIPPING OVER $99</span>
+              <span className="text-brand-yellow">★</span>
+              <span>🔥 NEW FORMULA DROPPING SOON</span>
+              <span className="text-brand-yellow">★</span>
+              <span>💪 250MG CAFFEINE PER SERVING</span>
+              <span className="text-brand-yellow">★</span>
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 border-b-[3px] border-brand-black transition-all duration-300 ${
+        className={`fixed top-8 left-0 right-0 z-50 border-b-[3px] border-brand-black transition-all duration-300 ${
           scrolled
             ? "bg-brand-yellow/95 backdrop-blur-md shadow-lg"
             : "bg-brand-yellow"
@@ -143,7 +163,8 @@ export function Navbar() {
       </AnimatePresence>
 
       {/* Spacer for fixed nav */}
-      <div className="h-16 md:h-20" />
+      {/* Spacer: announcement bar (h-8) + nav (h-16/h-20) */}
+      <div className="h-24 md:h-28" />
     </>
   );
 }
