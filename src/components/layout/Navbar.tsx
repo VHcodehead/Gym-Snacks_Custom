@@ -29,9 +29,9 @@ export function Navbar() {
       <AnnouncementBar />
 
       <nav
-        className={`fixed top-8 left-0 right-0 z-50 border-b-[3px] border-brand-black transition-all duration-300 ${
+        className={`fixed top-8 left-0 right-0 z-50 border-b-[3px] border-brand-black transition-all duration-500 ${
           scrolled
-            ? "bg-brand-yellow/95 backdrop-blur-md shadow-lg"
+            ? "bg-transparent backdrop-blur-sm border-b-white/10"
             : "bg-brand-yellow"
         }`}
       >
