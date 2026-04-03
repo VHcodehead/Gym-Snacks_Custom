@@ -26,24 +26,7 @@ export function Navbar() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-brand-pink border-b-[2px] border-brand-black overflow-hidden h-8 flex items-center">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex gap-12 whitespace-nowrap"
-        >
-          {Array.from({ length: 4 }).map((_, i) => (
-            <span key={i} className="font-display text-sm text-white tracking-wide flex items-center gap-3">
-              <span>⚡ FREE SHIPPING OVER $99</span>
-              <span className="text-brand-yellow">★</span>
-              <span>🔥 NEW FORMULA DROPPING SOON</span>
-              <span className="text-brand-yellow">★</span>
-              <span>💪 250MG CAFFEINE PER SERVING</span>
-              <span className="text-brand-yellow">★</span>
-            </span>
-          ))}
-        </motion.div>
-      </div>
+      <AnnouncementBar />
 
       <nav
         className={`fixed top-8 left-0 right-0 z-50 border-b-[3px] border-brand-black transition-all duration-300 ${
@@ -166,6 +149,41 @@ export function Navbar() {
       {/* Spacer: announcement bar (h-8) + nav (h-16/h-20) */}
       <div className="h-24 md:h-28" />
     </>
+  );
+}
+
+const announcements = [
+  "⚡ FREE SHIPPING OVER $99",
+  "🔥 NEW FORMULA DROPPING SOON",
+  "💪 250MG CAFFEINE PER SERVING",
+  "🍬 PRE-WORKOUT GUMMIES THAT ACTUALLY TASTE GOOD",
+];
+
+function AnnouncementBar() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % announcements.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="fixed top-0 left-0 right-0 z-50 bg-brand-pink border-b-[2px] border-brand-black h-8 flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.4 }}
+          className="font-display text-sm text-white tracking-wide"
+        >
+          {announcements[index]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
   );
 }
 
