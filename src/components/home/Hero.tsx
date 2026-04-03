@@ -136,8 +136,8 @@ export function Hero() {
               />
             </motion.div>
 
-            {/* Coming Soon callouts */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30">
+            {/* Coming Soon callouts — stacked to the right of bag */}
+            <div className="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-16 lg:-right-24 flex flex-col items-start gap-2 z-30">
               {["NEW FORMULA", "NEW LOOK", "BETTER TASTE"].map((text, i) => (
                 <motion.span
                   key={text}
