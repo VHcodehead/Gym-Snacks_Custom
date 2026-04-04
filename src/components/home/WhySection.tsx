@@ -39,18 +39,34 @@ export function WhySection() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle accent="PRE-WORKOUT GUMMIES?">WHY GYMSNACKS</SectionTitle>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+        >
           {features.map((feature, index) => (
-            <ScrollReveal key={feature.title} delay={index * 0.1}>
+            <motion.div
+              key={feature.title}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.85 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            >
               <motion.div
-                whileHover={{ y: -8, rotate: 2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ y: -10, rotate: index % 2 === 0 ? 2 : -2, scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 className="bg-surface p-8 rounded-comic-lg border-[4px] border-brand-black shadow-comic-lg text-center h-full"
               >
                 <motion.div
-                  animate={{ rotate: [-8, 8, -8] }}
+                  animate={{ rotate: [-8, 8, -8], scale: [1, 1.1, 1] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="text-5xl mb-6 block"
+                  className={`w-16 h-16 mx-auto mb-6 rounded-full ${feature.color} border-[3px] border-brand-black flex items-center justify-center text-3xl shadow-comic`}
                 >
                   {feature.icon}
                 </motion.div>
@@ -61,9 +77,9 @@ export function WhySection() {
                   {feature.description}
                 </p>
               </motion.div>
-            </ScrollReveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

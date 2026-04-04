@@ -35,8 +35,8 @@ export function Navbar() {
             : "bg-brand-yellow"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="relative z-10" onClick={closeMenu}>
               <Image
@@ -146,8 +146,8 @@ export function Navbar() {
       </AnimatePresence>
 
       {/* Spacer for fixed nav */}
-      {/* Spacer: announcement bar (h-8) + nav (h-16/h-20) */}
-      <div className="h-24 md:h-28" />
+      {/* Spacer: announcement bar (h-8) + nav (h-14/h-16/h-20) */}
+      <div className="h-22 sm:h-24 md:h-28" />
     </>
   );
 }
@@ -178,7 +178,7 @@ function AnnouncementBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.4 }}
-          className="font-display text-sm text-white tracking-wide"
+          className="font-display text-xs sm:text-sm text-white tracking-wide px-4 text-center"
         >
           {announcements[index]}
         </motion.span>
@@ -197,9 +197,10 @@ function CartCount() {
   return (
     <motion.span
       key={count}
-      initial={{ scale: 0.5 }}
-      animate={{ scale: 1 }}
-      className="bg-brand-black text-brand-yellow w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-brand-yellow"
+      initial={{ scale: 0, rotate: -180 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{ type: "spring", stiffness: 500, damping: 15 }}
+      className="bg-brand-black text-brand-yellow w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border-2 border-brand-yellow"
     >
       {count}
     </motion.span>

@@ -16,20 +16,53 @@ export function AboutHero() {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.h1
-          initial={{ y: -60, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 200, damping: 20 }}
           className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-black text-shadow-pink leading-tight mb-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.08 } },
+          }}
         >
-          WHERE PERFORMANCE
+          {["WHERE", "PERFORMANCE"].map((word) => (
+            <motion.span
+              key={word}
+              className="inline-block mr-[0.3em]"
+              variants={{
+                hidden: { y: 80, opacity: 0, rotateX: -40 },
+                visible: { y: 0, opacity: 1, rotateX: 0 },
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            >
+              {word}
+            </motion.span>
+          ))}
           <br />
-          MEETS <span className="text-brand-pink">FLAVOR</span>
+          <motion.span
+            className="inline-block mr-[0.3em]"
+            variants={{
+              hidden: { y: 80, opacity: 0, rotateX: -40 },
+              visible: { y: 0, opacity: 1, rotateX: 0 },
+            }}
+            transition={{ type: "spring", stiffness: 200, damping: 18 }}
+          >
+            MEETS
+          </motion.span>
+          <motion.span
+            className="inline-block text-brand-pink"
+            variants={{
+              hidden: { y: 80, opacity: 0, scale: 0.5, rotateX: -40 },
+              visible: { y: 0, opacity: 1, scale: 1, rotateX: 0 },
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          >
+            FLAVOR
+          </motion.span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.6, duration: 0.6 }}
           className="text-xl md:text-2xl text-brand-black/70 font-semibold"
         >
           The story behind the world&apos;s first truly enjoyable pre-workout.

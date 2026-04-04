@@ -33,16 +33,32 @@ export function MissionSection() {
 
         <ScrollReveal delay={0.5}>
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="mt-12 p-8 bg-brand-yellow/10 rounded-comic-xl border-[3px] border-brand-yellow/30 text-center"
+            whileHover={{ scale: 1.02, borderColor: "rgba(255, 215, 0, 0.6)" }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 150, damping: 20, delay: 0.3 }}
+            className="mt-12 p-8 bg-brand-yellow/10 rounded-comic-xl border-[3px] border-brand-yellow/30 text-center relative overflow-hidden"
           >
-            <p className="text-xl md:text-2xl text-white leading-relaxed">
+            {/* Subtle animated glow */}
+            <motion.div
+              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,215,0,0.1),transparent_70%)] pointer-events-none"
+            />
+            <p className="text-xl md:text-2xl text-white leading-relaxed relative z-10">
               Because when something tastes this good and performs this well, it stops feeling like
               a supplement...
               <br />
-              <span className="text-brand-pink font-display text-2xl md:text-3xl mt-2 block">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+                className="text-brand-pink font-display text-2xl md:text-3xl mt-2 block"
+              >
                 and starts feeling like motivation in a bag.
-              </span>
+              </motion.span>
             </p>
           </motion.div>
         </ScrollReveal>

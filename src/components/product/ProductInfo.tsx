@@ -48,26 +48,39 @@ export function ProductInfo({ product }: ProductInfoProps) {
   return (
     <div>
       {/* Title */}
-      <h1 className="font-display text-4xl md:text-5xl text-brand-black mb-4">
+      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-brand-black mb-4">
         {product.title}
       </h1>
 
       {/* Price */}
-      <p className="font-display text-4xl text-brand-pink mb-6">
+      <p className="font-display text-3xl sm:text-4xl text-brand-pink mb-6">
         ${price.toFixed(2)}
       </p>
 
       {/* Badges */}
-      <div className="flex flex-wrap gap-3 mb-6">
+      <motion.div
+        className="flex flex-wrap gap-3 mb-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
+        }}
+      >
         {["⚡ Fast Acting", "🧠 Focus Boost", "💪 Peak Performance"].map((badge) => (
-          <span
+          <motion.span
             key={badge}
-            className="px-4 py-2 bg-brand-yellow font-bold text-sm rounded-pill border-[3px] border-brand-black shadow-comic"
+            variants={{
+              hidden: { opacity: 0, scale: 0, rotate: -10 },
+              visible: { opacity: 1, scale: 1, rotate: 0 },
+            }}
+            transition={{ type: "spring", stiffness: 500, damping: 15 }}
+            whileHover={{ scale: 1.1, rotate: -3, y: -2 }}
+            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-brand-yellow font-bold text-xs sm:text-sm rounded-pill border-[3px] border-brand-black shadow-comic cursor-default"
           >
             {badge}
-          </span>
+          </motion.span>
         ))}
-      </div>
+      </motion.div>
 
       {/* Description */}
       <p className="text-muted leading-relaxed mb-8">
@@ -87,7 +100,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedVariant(variant)}
                 className={`
-                  px-5 py-3 rounded-comic border-[3px] font-bold cursor-pointer transition-all
+                  px-3 py-2 sm:px-5 sm:py-3 rounded-comic border-[3px] font-bold cursor-pointer transition-all
                   ${
                     selectedVariant?.id === variant.id
                       ? "border-brand-pink bg-brand-pink/10 shadow-pink-glow"
@@ -143,7 +156,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           whileTap={{ scale: 0.98 }}
           onClick={handleAddToCart}
           className={`
-            w-full py-4 font-display text-xl rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-pointer transition-colors
+            w-full py-3 sm:py-4 font-display text-lg sm:text-xl rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-pointer transition-colors
             ${added ? "bg-mascot-green text-brand-black" : "bg-brand-pink text-white"}
           `}
         >
@@ -154,14 +167,14 @@ export function ProductInfo({ product }: ProductInfoProps) {
           whileHover={{ scale: 1.02, y: -3 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleBuyNow}
-          className="w-full py-4 bg-brand-yellow text-brand-black font-display text-xl rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-pointer"
+          className="w-full py-3 sm:py-4 bg-brand-yellow text-brand-black font-display text-lg sm:text-xl rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-pointer"
         >
           BUY IT NOW
         </motion.button>
       </div>
 
       {/* Ingredient Bursts */}
-      <div className="flex justify-center gap-4 mt-10">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
         <BurstBadge size="sm" delay={0.3}>250MG<br />CAFFEINE</BurstBadge>
         <BurstBadge size="sm" delay={0.5}>3G BETA<br />ALANINE</BurstBadge>
         <BurstBadge size="sm" delay={0.7}>1100MG<br />GLYCEROL</BurstBadge>

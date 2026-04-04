@@ -31,7 +31,7 @@ export function SectionTitle({ children, subtitle, accent, className = "" }: Sec
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-muted text-lg md:text-xl font-semibold mt-6"
+          className="text-muted text-base sm:text-lg md:text-xl font-semibold mt-4 sm:mt-6 px-2"
         >
           {subtitle}
         </motion.p>

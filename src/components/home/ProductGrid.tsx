@@ -54,7 +54,7 @@ export function ProductGrid({ products }: ProductGridProps) {
     <section id="shop" className="py-20 bg-brand-yellow-cream relative overflow-hidden">
       <PatternBackground density="light" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <SectionTitle accent="SUPPLEMENTS" subtitle="Pre-workout gummies and gym snacks — scientifically formulated, deliciously delivered.">
           SHOP
         </SectionTitle>
@@ -64,19 +64,26 @@ export function ProductGrid({ products }: ProductGridProps) {
           {categories.map((cat) => (
             <motion.button
               key={cat.key}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.08, y: -3 }}
+              whileTap={{ scale: 0.92 }}
               onClick={() => setActiveCategory(cat.key)}
               className={`
-                px-8 py-3 font-display text-lg rounded-pill border-[3px] border-brand-black shadow-comic cursor-pointer transition-colors
+                px-4 py-2 sm:px-8 sm:py-3 font-display text-sm sm:text-lg rounded-pill border-[3px] border-brand-black shadow-comic cursor-pointer transition-all duration-200 relative
                 ${
                   activeCategory === cat.key
-                    ? "bg-brand-pink text-white"
+                    ? "bg-brand-pink text-white shadow-comic-lg -translate-y-0.5"
                     : "bg-surface text-muted hover:bg-brand-yellow"
                 }
               `}
             >
               {cat.label}
+              {activeCategory === cat.key && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-brand-yellow rounded-full border-2 border-brand-black"
+                  transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                />
+              )}
             </motion.button>
           ))}
         </div>
@@ -85,10 +92,10 @@ export function ProductGrid({ products }: ProductGridProps) {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, staggerChildren: 0.08 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filtered.length > 0 ? (

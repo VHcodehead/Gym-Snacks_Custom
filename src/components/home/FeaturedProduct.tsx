@@ -34,11 +34,11 @@ export function FeaturedProduct({ product }: FeaturedProductProps) {
 
   return (
     <section className="py-20 bg-surface border-y-[5px] border-brand-black relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle accent="PRE-WORKOUT GUMMIES">FEATURED</SectionTitle>
 
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-10 items-center bg-brand-yellow-cream p-8 md:p-12 rounded-comic-xl border-[5px] border-brand-black shadow-comic-xl">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center bg-brand-yellow-cream p-4 sm:p-8 md:p-12 rounded-comic-xl border-[5px] border-brand-black shadow-comic-xl">
             {/* Image */}
             <div className="relative">
               {image && (
@@ -78,26 +78,40 @@ export function FeaturedProduct({ product }: FeaturedProductProps) {
                 {product.description?.replace(/<[^>]*>/g, "").slice(0, 200) ||
                   "Premium pre-workout gummies designed to fuel your fitness journey."}
               </p>
-              <p className="font-display text-5xl text-brand-pink mb-8">
+              <p className="font-display text-3xl sm:text-4xl md:text-5xl text-brand-pink mb-6 sm:mb-8">
                 ${price.toFixed(2)}
               </p>
 
               {/* Ingredient Highlights */}
-              <div className="flex flex-wrap gap-3 mb-8">
+              <motion.div
+                className="flex flex-wrap gap-3 mb-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+                }}
+              >
                 {[
                   "⚡ 250mg Caffeine",
                   "🔥 3.2g Beta-Alanine",
                   "💧 1g+ Glycerol",
                   "🍭 Delicious Flavors",
                 ].map((highlight) => (
-                  <span
+                  <motion.span
                     key={highlight}
-                    className="px-4 py-2 bg-brand-yellow font-bold text-sm rounded-pill border-[3px] border-brand-black shadow-comic"
+                    variants={{
+                      hidden: { opacity: 0, scale: 0, rotate: -12 },
+                      visible: { opacity: 1, scale: 1, rotate: 0 },
+                    }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15 }}
+                    whileHover={{ scale: 1.1, rotate: -3, y: -2 }}
+                    className="px-3 py-1.5 sm:px-4 sm:py-2 bg-brand-yellow font-bold text-xs sm:text-sm rounded-pill border-[3px] border-brand-black shadow-comic cursor-default"
                   >
                     {highlight}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">

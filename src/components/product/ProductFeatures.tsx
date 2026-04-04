@@ -35,13 +35,15 @@ export function ProductFeatures() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <ScrollReveal key={feature.title} delay={index * 0.1}>
+            <ScrollReveal key={feature.title} direction={index % 2 === 0 ? "left" : "right"} delay={index * 0.1}>
               <motion.div
-                whileHover={{ x: 8 }}
-                className="flex gap-5 p-6 bg-brand-yellow-cream rounded-comic-lg border-[3px] border-brand-black shadow-comic"
+                whileHover={{ x: 8, y: -4, boxShadow: "8px 8px 0 #1A1A1A" }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="flex gap-5 p-6 bg-brand-yellow-cream rounded-comic-lg border-[3px] border-brand-black shadow-comic cursor-default"
               >
                 <motion.span
-                  animate={{ rotate: [-5, 5, -5] }}
+                  animate={{ rotate: [-5, 5, -5], scale: [1, 1.15, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   className="text-4xl flex-shrink-0"
                 >

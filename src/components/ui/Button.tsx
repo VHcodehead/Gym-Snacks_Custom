@@ -41,7 +41,9 @@ export function Button({
     font-display uppercase tracking-wide
     rounded-pill border-[3px] border-brand-black
     shadow-comic cursor-pointer select-none
-    transition-colors duration-200
+    transition-all duration-200
+    hover:shadow-comic-hover hover:-translate-y-0.5
+    active:shadow-comic active:translate-y-0
     ${variants[variant]}
     ${sizes[size]}
     ${disabled ? "opacity-50 cursor-not-allowed" : ""}

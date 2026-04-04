@@ -44,9 +44,15 @@
   --radius-comic-xl: 32px;
   --radius-pill: 50px;
 
+  /* Shadows - Interactive */
+  --shadow-comic-pressed: 2px 2px 0 #1A1A1A;
+  --shadow-pink-glow-lg: 0 0 30px rgba(255, 20, 147, 0.4), 0 0 60px rgba(255, 20, 147, 0.15);
+  --shadow-yellow-glow: 0 0 20px rgba(255, 215, 0, 0.3);
+
   /* Animations */
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-snappy: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* === BASE STYLES === */
@@ -131,6 +137,28 @@ body {
 /* Starburst clip path for badges */
 .clip-burst {
   clip-path: polygon(50% 0%, 61% 11%, 75% 3%, 78% 18%, 93% 18%, 88% 33%, 100% 40%, 90% 50%, 100% 60%, 88% 67%, 93% 82%, 78% 82%, 75% 97%, 61% 89%, 50% 100%, 39% 89%, 25% 97%, 22% 82%, 7% 82%, 12% 67%, 0% 60%, 10% 50%, 0% 40%, 12% 33%, 7% 18%, 22% 18%, 25% 3%, 39% 11%);
+}
+
+/* Interactive utility: lift on hover with shadow grow */
+.hover-lift {
+  transition: transform 0.25s var(--ease-elastic), box-shadow 0.25s var(--ease-elastic);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-comic-lg);
+}
+
+.hover-lift:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-comic-pressed);
+}
+
+/* Focus ring for keyboard accessibility */
+.focus-ring:focus-visible {
+  outline: 3px solid var(--color-brand-pink);
+  outline-offset: 3px;
+  border-radius: var(--radius-comic);
 }
 
 /* Reduced motion */

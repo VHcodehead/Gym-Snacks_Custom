@@ -23,15 +23,15 @@ export function Hero() {
         <MascotFloat index={3} size={80} className="absolute top-32 right-[3%] z-20" shadow="light" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Text Content */}
           <div>
             <motion.h1
               initial={{ y: -80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="font-display text-6xl md:text-7xl lg:text-8xl text-brand-yellow text-shadow-pink leading-none mb-4"
+              className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-brand-yellow text-shadow-pink leading-none mb-4"
             >
               GYM
               <br />
@@ -42,9 +42,9 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg text-white/70 font-semibold mb-8 max-w-md"
             >
               The best tasting pre workout gummies with 250mg caffeine, 3g beta-alanine
@@ -79,9 +79,9 @@ export function Hero() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 20 }}
               className="flex flex-wrap gap-4"
             >
               <Button href="/#shop" variant="primary" size="lg">
@@ -103,7 +103,7 @@ export function Hero() {
               damping: 15,
               delay: 0.5,
             }}
-            className="relative flex justify-center"
+            className="relative flex flex-col items-center"
           >
             <motion.div
               animate={{
@@ -126,12 +126,17 @@ export function Hero() {
                 width={420}
                 height={480}
                 priority
-                className="max-h-[65vh] w-auto object-contain drop-shadow-[0_20px_60px_rgba(255,20,147,0.4)] hover:scale-105 transition-transform duration-500"
+                className="max-h-[45vh] sm:max-h-[55vh] lg:max-h-[65vh] w-auto object-contain drop-shadow-[0_20px_60px_rgba(255,20,147,0.4)] hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
 
-            {/* Coming Soon callouts — stacked to the right of bag */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-16 lg:-right-24 flex flex-col items-start gap-2 z-30">
+            {/* Coming Soon callouts — right of bag on lg+, below bag on mobile */}
+            <div className="
+              flex flex-wrap justify-center gap-2 mt-4
+              lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-right-24 lg:mt-0
+              lg:flex-col lg:items-start
+              z-30
+            ">
               {["NEW FORMULA", "NEW LOOK", "BETTER TASTE"].map((text, i) => (
                 <motion.span
                   key={text}
@@ -144,7 +149,7 @@ export function Hero() {
                     damping: 15,
                   }}
                   whileHover={{ scale: 1.2, rotate: i % 2 === 0 ? -5 : 5 }}
-                  className="px-4 py-1.5 bg-brand-yellow text-brand-black font-display text-sm md:text-base rounded-pill border-[3px] border-brand-black shadow-comic cursor-default whitespace-nowrap"
+                  className="px-3 py-1 sm:px-4 sm:py-1.5 bg-brand-yellow text-brand-black font-display text-xs sm:text-sm md:text-base rounded-pill border-[3px] border-brand-black shadow-comic cursor-default whitespace-nowrap"
                 >
                   {text}
                 </motion.span>
@@ -159,7 +164,7 @@ export function Hero() {
                   delay: 2.0,
                   scale: { delay: 2.2, duration: 1.5, repeat: Infinity },
                 }}
-                className="px-5 py-2 bg-brand-pink text-white font-display text-base md:text-lg rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-default whitespace-nowrap"
+                className="px-4 py-1.5 sm:px-5 sm:py-2 bg-brand-pink text-white font-display text-sm sm:text-base md:text-lg rounded-pill border-[3px] border-brand-black shadow-comic-lg cursor-default whitespace-nowrap"
               >
                 DROPPING SOON 🔥
               </motion.span>

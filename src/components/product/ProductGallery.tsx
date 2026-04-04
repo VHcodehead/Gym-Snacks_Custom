@@ -17,14 +17,15 @@ export function ProductGallery({ product }: ProductGalleryProps) {
   return (
     <div>
       {/* Main Image */}
-      <div className="relative bg-surface rounded-comic-xl border-[5px] border-brand-black shadow-comic-xl overflow-hidden mb-4">
+      <div className="relative bg-surface rounded-comic-xl border-[5px] border-brand-black shadow-comic-xl overflow-hidden mb-4 cursor-zoom-in group">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 1.05, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            whileHover={{ scale: 1.03 }}
           >
             {activeImage ? (
               <Image

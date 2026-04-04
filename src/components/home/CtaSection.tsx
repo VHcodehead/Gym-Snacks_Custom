@@ -32,17 +32,31 @@ export function CtaSection() {
 
         {/* Benefit Pills */}
         <ScrollReveal delay={0.3}>
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
-            {["No Shaker.", "No Crash.", "No Compromise."].map((text) => (
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.12 } },
+            }}
+          >
+            {["No Shaker.", "No Crash.", "No Compromise."].map((text, i) => (
               <motion.span
                 key={text}
-                whileHover={{ scale: 1.1, rotate: -3 }}
-                className="px-6 py-3 bg-brand-yellow text-brand-black font-display text-lg rounded-pill border-[3px] border-brand-black shadow-comic"
+                variants={{
+                  hidden: { opacity: 0, scale: 0, rotate: -15 },
+                  visible: { opacity: 1, scale: 1, rotate: 0 },
+                }}
+                transition={{ type: "spring", stiffness: 500, damping: 12 }}
+                whileHover={{ scale: 1.15, rotate: i % 2 === 0 ? -5 : 5, y: -4 }}
+                whileTap={{ scale: 0.9 }}
+                className="px-6 py-3 bg-brand-yellow text-brand-black font-display text-lg rounded-pill border-[3px] border-brand-black shadow-comic cursor-default"
               >
                 {text}
               </motion.span>
             ))}
-          </div>
+          </motion.div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { BurstBadge } from "@/components/ui/BurstBadge";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
@@ -15,7 +16,7 @@ const ingredients = [
 export function SolutionSection() {
   return (
     <section className="py-20 bg-brand-yellow-cream relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle accent="SOLUTION">THE GYMSNACKS</SectionTitle>
 
         <ScrollReveal>
@@ -24,7 +25,7 @@ export function SolutionSection() {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14">
           {ingredients.map((ing, i) => (
             <ScrollReveal key={ing.name} delay={i * 0.15}>
               <div className="text-center">
@@ -51,12 +52,16 @@ export function SolutionSection() {
         </div>
 
         <ScrollReveal>
-          <div className="max-w-2xl mx-auto text-center p-8 bg-surface rounded-comic-xl border-[4px] border-brand-black shadow-comic-lg">
+          <motion.div
+            whileHover={{ y: -4, boxShadow: "12px 12px 0 #1A1A1A" }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="max-w-2xl mx-auto text-center p-5 sm:p-8 bg-surface rounded-comic-xl border-[4px] border-brand-black shadow-comic-lg"
+          >
             <p className="text-lg text-muted leading-relaxed">
               A delicious gummy that tastes like candy, hits like your favorite pre, and leaves you
               feeling <span className="text-brand-pink font-bold">incredible</span> — not wrecked.
             </p>
-          </div>
+          </motion.div>
         </ScrollReveal>
       </div>
     </section>
