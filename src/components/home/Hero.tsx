@@ -36,7 +36,7 @@ export function Hero() {
               GYM
               <br />
               SNACKS
-              <span className="block font-display text-2xl md:text-3xl text-brand-pink mt-2">
+              <span className="block font-display text-xl sm:text-2xl md:text-3xl text-white mt-2 [text-shadow:none] tracking-wider">
                 PRE-WORKOUT GUMMIES
               </span>
             </motion.h1>
