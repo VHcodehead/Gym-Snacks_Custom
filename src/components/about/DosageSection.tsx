@@ -44,7 +44,7 @@ export function DosageSection() {
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="bg-brand-yellow p-8 rounded-comic-xl border-[4px] border-brand-black shadow-comic-xl">
+            <div className="bg-brand-yellow p-4 sm:p-8 rounded-comic-xl border-[4px] border-brand-black shadow-comic-xl">
               {/* Gummy Visual */}
               <div className="space-y-4">
                 {[
@@ -60,7 +60,7 @@ export function DosageSection() {
                     transition={{ delay: 0.3 + i * 0.2, duration: 0.8 }}
                   >
                     <p className="font-display text-sm text-brand-black mb-2">{level.label}</p>
-                    <div className="flex gap-1.5">
+                    <div className="flex gap-1 sm:gap-1.5 flex-wrap">
                       {Array.from({ length: 10 }).map((_, j) => (
                         <motion.div
                           key={j}
@@ -69,7 +69,7 @@ export function DosageSection() {
                           viewport={{ once: true }}
                           transition={{ delay: 0.5 + i * 0.2 + j * 0.05 }}
                           className={`
-                            w-8 h-8 rounded-full border-2 border-brand-black
+                            w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-brand-black
                             ${j < level.count ? level.color : "bg-white/50"}
                           `}
                         />

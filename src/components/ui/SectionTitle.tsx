@@ -18,7 +18,7 @@ export function SectionTitle({ children, subtitle, accent, className = "" }: Sec
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`text-center mb-12 ${className}`}
     >
-      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-brand-black inline-block relative">
+      <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-black inline-block relative">
         {children}
         {accent && (
           <span className="text-brand-pink"> {accent}</span>

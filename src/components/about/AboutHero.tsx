@@ -19,7 +19,7 @@ export function AboutHero() {
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="font-display text-5xl md:text-6xl lg:text-7xl text-brand-black text-shadow-pink leading-tight mb-6"
+          className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-black text-shadow-pink leading-tight mb-6"
         >
           WHERE PERFORMANCE
           <br />

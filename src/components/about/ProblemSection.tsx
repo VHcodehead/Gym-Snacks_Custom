@@ -46,30 +46,30 @@ export function ProblemSection() {
 
           {/* Before/After */}
           <ScrollReveal direction="right">
-            <div className="flex items-center gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-brand-black/5 p-8 rounded-comic-lg border-[3px] border-brand-black/20 text-center"
+                className="bg-brand-black/5 p-6 sm:p-8 rounded-comic-lg border-[3px] border-brand-black/20 text-center w-full sm:w-auto"
               >
                 <p className="font-display text-lg text-muted mb-3">BEFORE</p>
-                <p className="text-5xl mb-3">😖</p>
+                <p className="text-4xl sm:text-5xl mb-3">😖</p>
                 <p className="text-sm text-muted">Messy powders, bad taste</p>
               </motion.div>
 
               <motion.span
-                animate={{ x: [-3, 3, -3] }}
+                animate={{ y: [-3, 3, -3] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
-                className="font-display text-3xl text-brand-pink"
+                className="font-display text-3xl text-brand-pink rotate-90 sm:rotate-0"
               >
                 →
               </motion.span>
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-brand-yellow p-8 rounded-comic-lg border-[4px] border-brand-black shadow-comic-lg text-center"
+                className="bg-brand-yellow p-6 sm:p-8 rounded-comic-lg border-[4px] border-brand-black shadow-comic-lg text-center w-full sm:w-auto"
               >
                 <p className="font-display text-lg text-brand-black mb-3">AFTER</p>
-                <p className="text-5xl mb-3">😄</p>
+                <p className="text-4xl sm:text-5xl mb-3">😄</p>
                 <p className="text-sm text-brand-black/70 font-semibold">
                   Clean gummies, amazing flavor
                 </p>
