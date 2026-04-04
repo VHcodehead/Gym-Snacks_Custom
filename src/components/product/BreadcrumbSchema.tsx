@@ -12,19 +12,19 @@ export function BreadcrumbSchema({ productTitle, productHandle }: BreadcrumbSche
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://gymsnackinc.com",
+        item: "https://www.gymsnacksinc.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://gymsnackinc.com/products",
+        item: "https://www.gymsnacksinc.com/products",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: productTitle,
-        item: `https://gymsnackinc.com/products/${productHandle}`,
+        item: `https://www.gymsnacksinc.com/products/${productHandle}`,
       },
     ],
   };

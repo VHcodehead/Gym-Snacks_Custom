@@ -37,7 +37,7 @@ export function WhySection() {
   return (
     <section className="py-20 bg-surface border-y-[5px] border-brand-black relative">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle accent="GYMSNACKS?">WHY</SectionTitle>
+        <SectionTitle accent="PRE-WORKOUT GUMMIES?">WHY GYMSNACKS</SectionTitle>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (

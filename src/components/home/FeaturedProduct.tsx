@@ -35,7 +35,7 @@ export function FeaturedProduct({ product }: FeaturedProductProps) {
   return (
     <section className="py-20 bg-surface border-y-[5px] border-brand-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle accent="PRODUCT">FEATURED</SectionTitle>
+        <SectionTitle accent="PRE-WORKOUT GUMMIES">FEATURED</SectionTitle>
 
         <ScrollReveal>
           <div className="grid md:grid-cols-2 gap-10 items-center bg-brand-yellow-cream p-8 md:p-12 rounded-comic-xl border-[5px] border-brand-black shadow-comic-xl">

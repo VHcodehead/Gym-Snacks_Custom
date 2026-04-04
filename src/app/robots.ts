@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://gymsnackinc.com/sitemap.xml",
-    host: "https://gymsnackinc.com",
+    sitemap: "https://www.gymsnacksinc.com/sitemap.xml",
+    host: "https://www.gymsnacksinc.com",
   };
 }

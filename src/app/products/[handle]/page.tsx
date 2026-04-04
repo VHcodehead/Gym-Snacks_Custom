@@ -48,7 +48,7 @@ export async function generateMetadata({
         })),
       },
       alternates: {
-        canonical: `https://gymsnackinc.com/products/${handle}`,
+        canonical: `https://www.gymsnacksinc.com/products/${handle}`,
       },
     };
   } catch (error) {

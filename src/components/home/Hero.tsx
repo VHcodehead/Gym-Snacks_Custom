@@ -36,25 +36,19 @@ export function Hero() {
               GYM
               <br />
               SNACKS
+              <span className="block font-display text-2xl md:text-3xl text-brand-pink mt-2">
+                PRE-WORKOUT GUMMIES
+              </span>
             </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-display text-2xl md:text-3xl text-brand-pink mb-2"
-            >
-              PRE-WORKOUT GUMMIES
-            </motion.p>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.4 }}
               className="text-lg text-white/70 font-semibold mb-8 max-w-md"
             >
-              Fuel your workout one gummy at a time. Delicious, effective, and
-              actually fun to take.
+              The best tasting pre workout gummies with 250mg caffeine, 3g beta-alanine
+              &amp; 1100mg glycerol. No powder, no shaker — just grab, chew, and go.
             </motion.p>
 
             {/* Burst Badges */}

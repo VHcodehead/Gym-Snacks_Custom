@@ -55,8 +55,8 @@ export function ProductGrid({ products }: ProductGridProps) {
       <PatternBackground density="light" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <SectionTitle accent="PRODUCTS" subtitle="Scientifically formulated. Deliciously delivered.">
-          PREMIUM
+        <SectionTitle accent="SUPPLEMENTS" subtitle="Pre-workout gummies and gym snacks — scientifically formulated, deliciously delivered.">
+          SHOP
         </SectionTitle>
 
         {/* Category Tabs */}

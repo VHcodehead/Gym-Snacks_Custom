@@ -14,7 +14,7 @@ export function ProductSchema({ product }: ProductSchemaProps) {
     "@type": "Product",
     name: product.title,
     description: product.description,
-    url: `https://gymsnackinc.com/products/${product.handle}`,
+    url: `https://www.gymsnacksinc.com/products/${product.handle}`,
     image: product.images.edges.map((edge) => edge.node.url),
     brand: {
       "@type": "Brand",

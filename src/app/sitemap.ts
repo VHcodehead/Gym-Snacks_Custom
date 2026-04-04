@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getProducts } from "@/lib/shopify";
 
-const baseUrl = "https://gymsnackinc.com";
+const baseUrl = "https://www.gymsnacksinc.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes: MetadataRoute.Sitemap = [

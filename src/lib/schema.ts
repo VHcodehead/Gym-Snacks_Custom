@@ -13,7 +13,7 @@ export function generateProductSchema(product: ShopifyProduct) {
     "@type": "Product",
     name: product.title,
     description: product.description,
-    url: `https://gymsnackinc.com/products/${product.handle}`,
+    url: `https://www.gymsnacksinc.com/products/${product.handle}`,
     image: product.images.edges.map((edge) => edge.node.url),
     brand: {
       "@type": "Brand",
@@ -55,8 +55,8 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "GymSnacks",
-    url: "https://gymsnackinc.com",
-    logo: "https://gymsnackinc.com/logo.png",
+    url: "https://www.gymsnacksinc.com",
+    logo: "https://www.gymsnacksinc.com/logo.png",
     description: "Premium pre-workout gummies with 250mg caffeine, 3g beta-alanine, and 1100mg glycerol",
     sameAs: [
       "https://www.instagram.com/gymsnacksinc",
@@ -76,13 +76,13 @@ export function generateWebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GymSnacks",
-    url: "https://gymsnackinc.com",
+    url: "https://www.gymsnacksinc.com",
     description: "Premium pre-workout gummies",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://gymsnackinc.com/search?q={search_term_string}",
+        urlTemplate: "https://www.gymsnacksinc.com/search?q={search_term_string}",
       },
       query_input: "required name=search_term_string",
     },

@@ -9,10 +9,10 @@ import { MissionSection } from "@/components/about/MissionSection";
 import { CtaSection } from "@/components/home/CtaSection";
 
 export const metadata: Metadata = {
-  title: "About Us | GymSnacks",
-  description: "Learn about GymSnacks - The world's first candy-like pre-workout that actually works.",
+  title: "About GymSnacks | Pre-Workout Gummies That Taste Like Candy",
+  description: "GymSnacks created the first pre-workout gummies that taste like candy but perform like a clinically dosed pre. 250mg caffeine, 3g beta-alanine, 1100mg glycerol — no powder, no shaker, no crash.",
   alternates: {
-    canonical: "https://gymsnackinc.com/about",
+    canonical: "https://www.gymsnacksinc.com/about",
   },
 };
 

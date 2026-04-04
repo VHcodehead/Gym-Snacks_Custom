@@ -19,13 +19,13 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "GymSnacks",
-    url: "https://gymsnackinc.com",
+    url: "https://www.gymsnacksinc.com",
     description: "Premium pre-workout gummies",
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://gymsnackinc.com/search?q={search_term_string}",
+        urlTemplate: "https://www.gymsnacksinc.com/search?q={search_term_string}",
       },
       query_input: "required name=search_term_string",
     },

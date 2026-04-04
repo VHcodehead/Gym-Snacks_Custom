@@ -20,16 +20,38 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GymSnacks | Premium Pre-Workout Gummies",
+  title: "GymSnacks | Pre-Workout Gummies | Gym Snacks Pre Workout Supplement",
   description:
-    "Pre-workout supplements, reimagined. Delicious gummies packed with 250mg caffeine, 3g beta-alanine, and 1100mg glycerol. Fuel your workout one gummy at a time.",
-  keywords: ["pre-workout", "gummies", "supplements", "fitness", "gym", "caffeine", "beta-alanine"],
+    "GymSnacks pre-workout gummies — the best tasting pre workout gummies with 250mg caffeine, 3g beta-alanine & 1100mg glycerol. Convenient gym snacks that fuel your workout. No powder, no shaker, just grab and go. Shop GymSnacksInc.com",
+  keywords: [
+    "pre workout gummies",
+    "pre-workout gummies",
+    "gym snacks",
+    "gymsnacks",
+    "gymsnacksinc",
+    "preworkout gummies",
+    "caffeine gummies",
+    "workout gummies",
+    "pre workout candy",
+    "gummy pre workout",
+    "best pre workout gummies",
+    "pre workout supplements",
+    "gym snacks pre workout",
+    "fitness gummies",
+    "energy gummies",
+  ],
   openGraph: {
-    title: "GymSnacks | Premium Pre-Workout Gummies",
-    description: "Pre-workout supplements, reimagined. Delicious gummies packed with energy.",
+    title: "GymSnacks — Pre-Workout Gummies That Actually Taste Good",
+    description: "The best pre-workout gummies with 250mg caffeine, 3g beta-alanine & 1100mg glycerol. No powder, no shaker — just grab, chew, and go.",
     type: "website",
+    siteName: "GymSnacks",
   },
-  metadataBase: new URL("https://gymsnackinc.com"),
+  twitter: {
+    card: "summary_large_image",
+    title: "GymSnacks | Pre-Workout Gummies",
+    description: "Pre-workout gummies with 250mg caffeine. No powder, no shaker — just grab, chew, and go.",
+  },
+  metadataBase: new URL("https://www.gymsnacksinc.com"),
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -45,8 +67,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "GymSnacks",
-    url: "https://gymsnackinc.com",
-    logo: "https://gymsnackinc.com/logo.png",
+    url: "https://www.gymsnacksinc.com",
+    logo: "https://www.gymsnacksinc.com/logo.png",
     description: "Premium pre-workout gummies with 250mg caffeine, 3g beta-alanine, and 1100mg glycerol",
     sameAs: [
       "https://www.instagram.com/gymsnacksinc",
