@@ -5,7 +5,8 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 
 const rows = [
   { label: "Caffeine",          gs: "250mg ✅",    energy: "80–100mg ❌", other: "~150mg ⚠️" },
-  { label: "Betaine Glycerol",  gs: "3g ✅",       energy: "None ❌",     other: "Rarely ❌" },
+  { label: "Beta-Alanine",      gs: "3g ✅",       energy: "None ❌",     other: "Rarely ❌" },
+  { label: "Glycerol",          gs: "1g ✅",       energy: "None ❌",     other: "Rarely ❌" },
   { label: "Real Carb Fuel",    gs: "✅",           energy: "❌",          other: "❌" },
   { label: "Tastes Like Candy", gs: "✅",           energy: "Mediocre ⚠️", other: "Medicinal ❌" },
   { label: "No Bloat",          gs: "✅",           energy: "⚠️",          other: "❌" },

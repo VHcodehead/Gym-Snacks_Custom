@@ -11,14 +11,14 @@ const features = [
     description: "Supports sustained energy and focus from rep one to your last set. No crash — just clean, locked-in drive all workout long.",
   },
   {
-    icon: "💧",
-    title: "3g Betaine Glycerol — Clinical Dose Pump",
-    description: "Supports skin-splitting pumps and intracellular hydration. Most gummies have zero. We give you a full clinical dose.",
+    icon: "💪",
+    title: "3g Beta-Alanine — Full Clinical Dose",
+    description: "Supports muscular endurance and delays fatigue so you can push harder, longer. Most gummies skip it entirely. We give you the full 3 grams.",
   },
   {
     icon: "🔥",
-    title: "Real Carbs — Synergistic Workout Fuel",
-    description: "Glycerol pulls fast-absorbing carbs directly into muscle tissue. Supports endurance all the way through — you don't just start the workout, you fuel it.",
+    title: "1g Glycerol + Real Carbs — The Synergy",
+    description: "Glycerol pulls fast-absorbing carbs directly into muscle tissue for pump, hydration, and sustained fuel. Supports your entire workout — not just the warmup.",
   },
   {
     icon: "🍬",

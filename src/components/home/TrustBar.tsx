@@ -4,8 +4,8 @@ const items = [
   "⚗️ Lab Tested Ingredients",
   "🏭 GMP Certified Facility",
   "⚡ 250mg Caffeine",
-  "💧 3g Betaine Glycerol",
-  "🔥 Real Carb Fuel",
+  "💪 3g Beta-Alanine",
+  "💧 1g Glycerol + Real Carbs",
   "✅ No Proprietary Blends",
 ];
 

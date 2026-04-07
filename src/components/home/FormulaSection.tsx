@@ -14,18 +14,18 @@ const ingredients = [
   },
   {
     dose: "3g",
-    name: "Betaine Glycerol",
+    name: "Beta-Alanine",
     description:
-      "Clinical-dose pump and hydration agent. Most gummies have zero. We give you a full 3 grams. Supports skin-splitting pumps and intracellular hydration.",
-    legal: "Supports Pump & Hydration",
+      "Clinical dose that supports muscular endurance — delays fatigue so you can push harder, longer. Most gummies skip it entirely. We give you the full 3 grams.",
+    legal: "Supports Endurance",
     highlight: true,
   },
   {
-    dose: "Real",
-    name: "Carb Fuel",
+    dose: "1g",
+    name: "Glycerol + Real Carbs",
     description:
-      "Fast-absorbing carbs work synergistically with glycerol — pulling fuel directly into muscle tissue. You don't just start the workout, you fuel it all the way through.",
-    legal: "Supports Endurance & Performance",
+      "Glycerol pulls fast-absorbing carbs directly into muscle tissue for pump, hydration, and sustained fuel. The synergy is what separates us — you don't just start the workout, you fuel it all the way through.",
+    legal: "Supports Pump, Hydration & Performance",
     highlight: false,
   },
 ];
