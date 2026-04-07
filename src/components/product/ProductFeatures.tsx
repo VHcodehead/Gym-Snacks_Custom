@@ -7,23 +7,23 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 const features = [
   {
     icon: "⚡",
-    title: "Instant Energy Kick",
-    description: "Fast-acting formula starts working within 15 minutes. No more waiting around!",
+    title: "250mg Caffeine — Highest in Any Gummy",
+    description: "Supports sustained energy and focus from rep one to your last set. No crash — just clean, locked-in drive all workout long.",
   },
   {
-    icon: "🧠",
-    title: "Laser Focus",
-    description: "Nootropic blend keeps you locked in and motivated throughout your entire workout.",
+    icon: "💧",
+    title: "3g Betaine Glycerol — Clinical Dose Pump",
+    description: "Supports skin-splitting pumps and intracellular hydration. Most gummies have zero. We give you a full clinical dose.",
   },
   {
-    icon: "💪",
-    title: "Enhanced Performance",
-    description: "Scientifically proven ingredients to boost strength, endurance, and power output.",
+    icon: "🔥",
+    title: "Real Carbs — Synergistic Workout Fuel",
+    description: "Glycerol pulls fast-absorbing carbs directly into muscle tissue. Supports endurance all the way through — you don't just start the workout, you fuel it.",
   },
   {
-    icon: "😋",
-    title: "Delicious Taste",
-    description: "No more choking down bitter powders. These gummies actually taste amazing!",
+    icon: "🍬",
+    title: "Tastes Like Actual Candy",
+    description: "57 reviews. 5.0 stars. Customers say it's better than the candy they grew up on — zero chalky aftertaste, zero bloat, zero medicinal smell.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function ProductFeatures() {
   return (
     <section className="py-20 bg-surface border-t-[5px] border-brand-black">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionTitle>WHY YOU&apos;LL LOVE IT</SectionTitle>
+        <SectionTitle accent="THE PROOF">THE FORMULA.</SectionTitle>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (

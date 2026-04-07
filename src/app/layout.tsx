@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/layout/CartDrawer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { SocialProofPopup } from "@/components/ui/SocialProofPopup";
 
 const bungee = Bungee({
   weight: "400",
@@ -96,6 +97,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <CartDrawer />
+          <SocialProofPopup />
         </SmoothScroll>
       </body>
     </html>
