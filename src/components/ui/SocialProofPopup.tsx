@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const notifications = [
-  { name: "John",       location: "Gilbert, AZ",          text: "just purchased the Variety Pack 🔥" },
-  { name: "Joshua O.",  location: "San Jose, CA",          text: "just left a 5-star review ⭐" },
-  { name: "Melissa R.", location: "Phoenix, AZ",           text: "just purchased Blue Raspberry 🛒" },
-  { name: "Grant Y.",   location: "Tempe, AZ",             text: "just reordered — 2nd time buyer 💪" },
-  { name: "Nicholas O.",location: "Salt Lake City, UT",    text: "just purchased the Variety Pack 🔥" },
-  { name: "Samantha P.",location: "Tempe, AZ",             text: "just left a 5-star review ⭐" },
-  { name: "Blake",      location: "Gilbert, AZ",           text: "just purchased Strawberry 🍓" },
-  { name: "Zach D.",    location: "Tempe, AZ",             text: "just purchased Watermelon 🍉" },
-  { name: "Jason G.",   location: "Tempe, AZ",             text: "just purchased the Variety Pack 🔥" },
-  { name: "Laura P.",   location: "Tempe, AZ",             text: "just purchased Green Apple 🍏" },
+  { name: "John",        location: "Gilbert, AZ",       text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🔥" },
+  { name: "Joshua O.",   location: "San Jose, CA",       text: "just left a 5-star review on Pre-Workout Gummy Rings ⭐" },
+  { name: "Melissa R.",  location: "Phoenix, AZ",        text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🛒" },
+  { name: "Grant Y.",    location: "Tempe, AZ",          text: "just reordered Pre-Workout Gummy Rings — 2nd time 💪" },
+  { name: "Nicholas O.", location: "Salt Lake City, UT", text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🔥" },
+  { name: "Samantha P.", location: "Tempe, AZ",          text: "just purchased Sleep Well Gummies 😴" },
+  { name: "Blake",       location: "Gilbert, AZ",        text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🛒" },
+  { name: "Zach D.",     location: "Tempe, AZ",          text: "just purchased Multivitamin Gummies for Adults 💊" },
+  { name: "Jason G.",    location: "Tempe, AZ",          text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🔥" },
+  { name: "Laura P.",    location: "Tempe, AZ",          text: "just purchased the Gym Snacks Hat 🧢" },
+  { name: "Michael R.",  location: "Tempe, AZ",          text: "just left a 5-star review on Pre-Workout Gummy Rings ⭐" },
+  { name: "Zachary S.",  location: "Tempe, AZ",          text: "just purchased Pre-Workout Gummy Rings: Sour Variety Pack 🔥" },
 ];
 
 export function SocialProofPopup() {
