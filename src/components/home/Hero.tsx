@@ -54,7 +54,7 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg text-white/70 font-semibold mb-8 max-w-md"
             >
-              250mg Caffeine. 3g Betaine Glycerol. Real Carbs. The only gummy that fuels your workout — not just starts it.
+              The strongest pre-workout gummy ever made. Doesn&apos;t just power your workout — it fuels it.
             </motion.p>
 
             {/* Burst Badges */}
