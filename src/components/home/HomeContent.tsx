@@ -2,7 +2,10 @@
 
 import { FeaturedProduct } from "./FeaturedProduct";
 import { ProductGrid } from "./ProductGrid";
-import { WhySection } from "./WhySection";
+import { TrustBar } from "./TrustBar";
+import { FormulaSection } from "./FormulaSection";
+import { ComparisonSection } from "./ComparisonSection";
+import { ReviewsSection } from "./ReviewsSection";
 import { CtaSection } from "./CtaSection";
 import type { ShopifyProduct } from "@/lib/types";
 
@@ -14,9 +17,12 @@ interface HomeContentProps {
 export function HomeContent({ products, featuredProduct }: HomeContentProps) {
   return (
     <>
+      <TrustBar />
       {featuredProduct && <FeaturedProduct product={featuredProduct} />}
       <ProductGrid products={products} />
-      <WhySection />
+      <FormulaSection />
+      <ComparisonSection />
+      <ReviewsSection />
       <CtaSection />
     </>
   );

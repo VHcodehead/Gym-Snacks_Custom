@@ -27,19 +27,26 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Text Content */}
           <div>
-            <motion.h1
+            <motion.div
               initial={{ y: -80, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-brand-yellow text-shadow-pink leading-none mb-4"
             >
-              GYM
-              <br />
-              SNACKS
-              <span className="block font-display text-xl sm:text-2xl md:text-3xl text-white mt-2 [text-shadow:none] tracking-wider">
-                PRE-WORKOUT GUMMIES
+              <span className="block font-display text-lg sm:text-xl text-brand-pink tracking-widest mb-2">
+                GYMSNACKS
               </span>
-            </motion.h1>
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-yellow text-shadow-pink leading-none mb-4">
+                THE STRONGEST
+                <br />
+                GUMMY PRE-WORKOUT
+                <span className="block text-white mt-1">
+                  THAT ACTUALLY
+                </span>
+                <span className="block text-brand-pink">
+                  TASTES LIKE CANDY.
+                </span>
+              </h1>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -47,8 +54,7 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg text-white/70 font-semibold mb-8 max-w-md"
             >
-              The best tasting pre workout gummies with 250mg caffeine, 3g beta-alanine
-              &amp; 1100mg glycerol. No powder, no shaker — just grab, chew, and go.
+              250mg Caffeine. 3g Betaine Glycerol. Real Carbs. The only gummy that fuels your workout — not just starts it.
             </motion.p>
 
             {/* Burst Badges */}
